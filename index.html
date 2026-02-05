@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my love </title>
+
+    <style> 
+   body {
+            font-family: Arial, sans-serif;
+            background-image: url('a.jpg');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Lobster', cursive; 
+            color: #000000;
+            margin-bottom: 20px; 
+            position: absolute;
+            top: 20px;
+        }
+
+        h2 {
+            font-family: 'Lobster', cursive; 
+            color: #000000;
+            margin-bottom: 30px; 
+            position: absolute;
+            top: 60px;
+        }
+
+        h3 {
+            font-family: 'Lobster', cursive; 
+            color: #000000;
+            margin-bottom: 40px; 
+            position: absolute;
+            top: 110px;
+        }
+
+        #envelope {
+            width: 100px;
+            height: 60px;
+            color: rgb(235, 208, 208);
+            background-color: #420b0a;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+
+        #letter {
+            display: none;
+            width: 150px;
+            height: 140px;
+            background-image: url('background.jpg');
+            border: 2px solid #000000;
+            padding: 10px;
+            position: absolute;
+            border-radius: 15px;
+            margin-bottom: 140px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: bottom 0.5s;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #yes {
+            padding: 10px 20px;
+            background-color: #1e4827;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #no {
+            padding: 10px 20px;
+            background-color: #4d0d14;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+          @media (max-width: 600px) {
+            h1, h2, h3 {
+                font-size: 1.2rem; 
+            }
+
+            #envelope {
+                font-size: 1.2rem; 
+            }
+
+            #yes, #no {
+                padding: 8px 10px; 
+                font-size: 0.9rem; 
+            }
+        }
+
+    </style>
+</head>
+<body>
+     <h1> To: My Dearest Valentine ♡</h1>
+    <h2> From: Your amazing girlfreind ⋆. 𐙚 ˚ </h2>
+    <h3> love you ⋆˚✿˖° </h3>
+
+    <div id="envelope" onclick="openEnvelope()"> click me </div>
+
+    <div id="letter">
+        <p> Will you be my Valentine? ૮ ྀིᴗ͈ . ᴗ͈ ྀིა</p>
+        <div class="buttons">
+            <button id="yes" onclick="handleResponse('yes')">Yes</button>
+            <button id="no" onclick="handleResponse('no')">No</button>
+        </div>
+
+    </div>
+
+    <script>
+            function openEnvelope() {
+                document.getElementById('letter').style.display = "block";
+                setTimeout(() => {
+                    document.getElementById('letter').style.bottom = "0";
+                }, 300);
+            }
+    
+            let noCount = 0;
+    
+            function handleResponse(response) {
+                if (response === 'yes') {
+                    alert("Yayyyy! Call me!");
+                } else {
+                    noCount++;
+                    const yesButton = document.getElementById('yes');
+                    const noButton = document.getElementById('no');
+    
+                     switch(noCount) {
+                    case 1:
+                        noButton.innerText = "Why?";
+                        yesButton.style.transform = "scale(1.2)";
+                        break;
+                    case 2:
+                        noButton.innerText = "Pleaseeeee";
+                        yesButton.style.transform = "scale(1.5)";
+                        break;
+                    case 3:
+                        noButton.innerText = "Please say yes";
+                        yesButton.style.transform = "scale(2)";
+                        break;
+                    case 4:
+                        yesButton.style.transform = "scale(3)";
+                        noButton.style.display = "none";
+                        break;
+                    default:
+                        break;
+                    }
+                }
+            }
+        </script>
+
+
+ 
+    </body>
+</html>
